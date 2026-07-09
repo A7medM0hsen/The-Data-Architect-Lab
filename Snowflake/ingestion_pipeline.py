@@ -42,7 +42,7 @@ cursor.execute("TRUNCATE TABLE IF EXISTS BTS_AIRLINE_DB.RAW.RAW_FLIGHTS_2024;")
 cursor.execute("TRUNCATE TABLE IF EXISTS BTS_AIRLINE_DB.RAW.RAW_FLIGHTS_2025;")
 cursor.execute("TRUNCATE TABLE IF EXISTS BTS_AIRLINE_DB.RAW.RAW_FLIGHTS_2026;")
 
-print("📂 جاري جلب قائمة الملفات المضغوطة من Backblaze...")
+print("zibed file from Backblaze...")
 response = b2_client.list_objects_v2(Bucket=BUCKET_NAME, Prefix="raw/flights/")
 files = [obj['Key'] for obj in response.get('Contents', []) if obj['Key'].endswith('.zip')]
 
