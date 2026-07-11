@@ -283,6 +283,7 @@ The schema contains:
 
 All three fact tables (`fact_flight`, `fact_flight_operation`, `fact_flight_delay`) are materialized as `incremental` models using a `merge` strategy on `Flight_Key`, so only new or changed flight records are processed on each run instead of a full table rebuild.
 
+{% raw %}
 ```jinja-sql
 {{
     config(
@@ -293,6 +294,7 @@ All three fact tables (`fact_flight`, `fact_flight_operation`, `fact_flight_dela
     )
 }}
 ```
+{% endraw %}
 
 | Config                 | Value          | Why?                                                              |
 | ------------------------ | -------------- | -------------------------------------------------------------------- |
@@ -392,3 +394,6 @@ Analyses are exploratory and business-facing rather than part of the transformat
 | 🏗️ Data Modeling | Galaxy Schema                    |
 | 📚 Documentation  | dbt Docs                         |
 | ✅ Testing         | Generic, Singular & Unit Tests   |
+
+
+{% enddocs %}
